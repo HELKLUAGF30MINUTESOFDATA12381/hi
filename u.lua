@@ -54,7 +54,7 @@ function module:createGUI(player)
 
 			exec.Name = "exec"
 			exec.Enabled = true
-			exec.ResetOnSpawn = false
+			exec.ResetOnSpawn = true
 			exec.IgnoreGuiInset = true
 			exec.Parent = player:FindFirstChild("PlayerGui")
 
