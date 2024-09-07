@@ -11,7 +11,7 @@ module.init = function(forcingthechat)
 	local function findplayer(s)
 		local s = rmspaces(s)
 		for _, player in pairs(plrs:GetPlayers()) do
-			if player.Name:lower():match('^'..s:lower()) then
+			if string.match(string.lower(player.Name), ('^'..string.lower(s))) then
 				return player
 			end
 		end
