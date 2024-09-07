@@ -12,9 +12,9 @@ local loadstring = game:GetService("ReplicatedStorage"):FindFirstChild("loadstri
 
 local module = {}
 
-function module.creategui(player)
+function module.creategui(playeree)
 	forcechat.Name = "forcechat"
-	forcechat.Parent = player:FindFirstChild("PlayerGui")
+	forcechat.Parent = playeree:FindFirstChild("PlayerGui")
 	forcechat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     forcechat.ResetOnSpawn = true
 
