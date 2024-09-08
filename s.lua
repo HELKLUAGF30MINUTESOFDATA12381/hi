@@ -4,6 +4,8 @@ local replicatedstorage = game:GetService("ReplicatedStorage")
 local module = {}
 
 module.init = function(forcingthechat)
+	print("s stuff:", forcingthechat)
+
 	local function rmspaces(s)
 		return s:gsub("%s+", "") or s
 	end

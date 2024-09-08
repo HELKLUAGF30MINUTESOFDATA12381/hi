@@ -109,6 +109,8 @@ end
 function module.init(playere)
 	local forcingthechat, run, player, message = module.creategui(playere)
 	
+print("ui stuff:", forcingthechat, run, player, message, playere)
+
 	local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/s.lua", true))()
 	
 	local localscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/l.lua", true))()
