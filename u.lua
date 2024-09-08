@@ -4,20 +4,11 @@ local module = {}
 
 function module.creategui(playeree)
 	local forcechat = Instance.new("ScreenGui")
-	local main = Instance.new("Frame")
-	local a = Instance.new("Frame")
-	local TextLabel = Instance.new("TextLabel")
-	local player = Instance.new("TextBox")
-	local message = Instance.new("TextBox")
-	local run = Instance.new("TextButton")
-	local Frame = Instance.new("Frame")
-	local forcingthechat = Instance.new("RemoteEvent")
-
 	forcechat.Name = "forcechat"
 	forcechat.Parent = playeree:FindFirstChild("PlayerGui")
 	forcechat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     forcechat.ResetOnSpawn = true
-
+	local main = Instance.new("Frame")
 	main.Name = "main"
 	main.Parent = forcechat
 	main.Active = true
@@ -27,7 +18,7 @@ function module.creategui(playeree)
 	main.Position = UDim2.new(0.202, 0, 0.257, 0)
 	main.Selectable = true
 	main.Size = UDim2.new(0, 391, 0, 253)
-
+	local a = Instance.new("Frame")
 	a.Name = "a"
 	a.Parent = main
 	a.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
@@ -35,7 +26,7 @@ function module.creategui(playeree)
 	a.BorderSizePixel = 0
 	a.Position = UDim2.new(-0.002, 0, -0.004, 0)
 	a.Size = UDim2.new(0, 391, 0, 51)
-
+	local TextLabel = Instance.new("TextLabel")
 	TextLabel.Parent = main
 	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.BackgroundTransparency = 1.000
@@ -48,7 +39,7 @@ function module.creategui(playeree)
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextSize = 31.000
 	TextLabel.TextWrapped = true
-
+	local player = Instance.new("TextBox")
 	player.Name = "player"
 	player.Parent = main
 	player.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
@@ -63,7 +54,7 @@ function module.creategui(playeree)
 	player.TextScaled = true
 	player.TextSize = 14.000
 	player.TextWrapped = true
-
+	local message = Instance.new("TextBox")
 	message.Name = "message"
 	message.Parent = main
 	message.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
@@ -78,7 +69,7 @@ function module.creategui(playeree)
 	message.TextScaled = true
 	message.TextSize = 14.000
 	message.TextWrapped = true
-
+	local run = Instance.new("TextButton")
 	run.Name = "run"
 	run.Parent = main
 	run.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -92,14 +83,14 @@ function module.creategui(playeree)
 	run.TextScaled = true
 	run.TextSize = 14.000
 	run.TextWrapped = true
-
+	local Frame = Instance.new("Frame")
 	Frame.Parent = main
 	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
 	Frame.BorderColor3 = Color3.fromRGB(255, 255, 0)
 	Frame.BorderSizePixel = 0
 	Frame.Position = UDim2.new(-0.002, 0, 0.198, 0)
 	Frame.Size = UDim2.new(0, 391, 0, 0)
-
+	local forcingthechat = Instance.new("RemoteEvent")
 	forcingthechat.Name = "forcingthechat"
 	forcingthechat.Parent = main
 
