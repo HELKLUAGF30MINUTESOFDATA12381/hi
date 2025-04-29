@@ -32,13 +32,13 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
         otherscripts:FindFirstChild("scroll"):FindFirstChild("forcechat").MouseButton1Click:Connect(function()
             local playergui = exec.Parent
 
-            if exec.Parent then
-                if exec.Parent:IsA("PlayerGui") then
-                    print(player)
+            if playergui then
+                if playergui:IsA("PlayerGui") then
+                    print(player, playergui)
 
                     if player == nil then player = exec.Parent.Parent end
 
-                    print(player)
+                    print(player, playergui)
 
                     if not exec.Parent:FindFirstChild("forcechat") then
                         local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
