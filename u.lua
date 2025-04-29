@@ -278,7 +278,7 @@ function module:createGUI(player)
 			otherscripts.Position = UDim2.new(0.5, 0, 0.449999988, 0)
 			otherscripts.Size = UDim2.new(1, 0, 0.699999988, 0)
 			otherscripts.Visible = false
-			
+
 			scroll.Name = "scroll"
 			scroll.Parent = otherscripts
 			scroll.Active = true
@@ -317,11 +317,12 @@ function module:createGUI(player)
 			fcbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			fcbutton.BorderSizePixel = 0
 			fcbutton.Size = UDim2.new(0.8, 0, 0.2, 0)
+			fcbutton.ZIndex = 2
 			fcbutton.Font = Enum.Font.SourceSansSemibold
 			fcbutton.Text = "FORCE CHAT"
 			fcbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
 			fcbutton.TextScaled = true
-			fcbutton.TextSize = 36
+			fcbutton.TextSize = 36.000
 			fcbutton.TextWrapped = true
 
 			shadow_5.Name = "shadow"
