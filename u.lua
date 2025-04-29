@@ -1,4 +1,4 @@
-local loadstring = game:GetService("ReplicatedStorage"):FindFirstChild("loadstring")
+local loadstring = require(game:GetService("ReplicatedStorage"):FindFirstChild("loadstring"))
 
 local module = {}
 
