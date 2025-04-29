@@ -316,7 +316,7 @@ function module:createGUI(player)
 			fcbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			fcbutton.BorderSizePixel = 0
 			fcbutton.Size = UDim2.new(0.8, 0, 0.2, 0)
-			fcbutton.FontFace = Enum.Font.SourceSansSemibold
+			fcbutton.Font = Enum.Font.SourceSansSemibold
 			fcbutton.Text = "FORCE CHAT"
 			fcbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
 			fcbutton.TextScaled = true
