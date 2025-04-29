@@ -324,7 +324,7 @@ function module:createGUI(player)
 			fcbutton.TextWrapped = true
 
 			shadow_5.Name = "shadow"
-			shadow_5.Parent = clear
+			shadow_5.Parent = fcbutton
 			shadow_5.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			shadow_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			shadow_5.BorderSizePixel = 0
