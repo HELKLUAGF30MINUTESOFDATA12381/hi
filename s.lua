@@ -3,8 +3,8 @@ local replicatedstorage = game:GetService("ReplicatedStorage")
 
 local module = {}
 
-module.init = function(forcingthechat)
-	print("s stuff:", forcingthechat)
+module.init = function(forcingthechat, run)
+	print("s stuff:", forcingthechat, run)
 
 	local function rmspaces(s)
 		return s:gsub("%s+", "") or s
@@ -21,6 +21,10 @@ module.init = function(forcingthechat)
 		return nil
 	end
 
+    run.Parent:FindFirstChild("a"):FindFirstChild("close").MouseButton1Click:Connect(function()
+        run.Parent.Parent:Destroy()
+    end)
+
 	forcingthechat.OnServerEvent:Connect(function(plr, victim, message)
 		local eligible = replicatedstorage:FindFirstChild("returnwhitelistsrv"):Invoke(plr)
 
@@ -34,10 +38,6 @@ module.init = function(forcingthechat)
 		    end
         end
 	end)
-
-    forcingthechat.Parent:FindFirstChild("a"):FindFirstChild("close").MouseButton1Click:Connect(function()
-        forcingthechat.Parent.Parent:Destroy()
-    end)
 end
 
 return module

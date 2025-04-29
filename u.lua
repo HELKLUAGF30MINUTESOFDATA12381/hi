@@ -129,7 +129,7 @@ print("ui stuff:", forcingthechat, run, player, message, playere)
 		localscripts.init(...)
 	]]
 
-    serverscripts.init(forcingthechat)
+    serverscripts.init(forcingthechat, run)
 	game:GetService("ReplicatedStorage"):FindFirstChild("runclient"):FireClient(playere, thecode, forcingthechat, run, player, message)
 end
 
