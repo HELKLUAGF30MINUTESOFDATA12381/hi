@@ -280,9 +280,9 @@ function module:createGUI(player)
 			otherscripts.Visible = false
 
 			UIListLayout.Name = "UIListLayout"
+			UIListLayout.Parent = scroll
 			UIListLayout.Padding = UDim.new(0, 10)
 			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-
 
 			scroll.Name = "scroll"
 			scroll.Parent = otherscripts
@@ -312,6 +312,7 @@ function module:createGUI(player)
 			TextLabel.TextWrapped = true
 
 			fcbutton.Name = "forcechat"
+			fcbutton.Name = scroll
 			fcbutton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 			fcbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			fcbutton.BorderSizePixel = 0
