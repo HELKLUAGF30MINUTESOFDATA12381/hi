@@ -278,9 +278,7 @@ function module:createGUI(player)
 			otherscripts.Position = UDim2.new(0.5, 0, 0.449999988, 0)
 			otherscripts.Size = UDim2.new(1, 0, 0.699999988, 0)
 			otherscripts.Visible = false
-
-
-
+			
 			scroll.Name = "scroll"
 			scroll.Parent = otherscripts
 			scroll.Active = true
@@ -314,7 +312,7 @@ function module:createGUI(player)
 			TextLabel.TextWrapped = true
 
 			fcbutton.Name = "forcechat"
-			fcbutton.Name = scroll
+			fcbutton.Parent = scroll
 			fcbutton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 			fcbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			fcbutton.BorderSizePixel = 0
