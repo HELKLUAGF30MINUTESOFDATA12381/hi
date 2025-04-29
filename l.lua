@@ -6,12 +6,12 @@ module.init = function(forcingthechat, run, player, message)
     end)
 
 	local function SDOON_fake_script() -- title.drag 
-		local script = Instance.new('LocalScript', message.Parent)
+		local script = Instance.new('LocalScript', run.Parent)
 		script.Name = "drag"
 
 		local UIS = game:GetService('UserInputService')
-		local frame = message.Parent
-		local dragthing = message.Parent:FindFirstChild("a")
+		local frame = run.Parent
+		local dragthing = run.Parent:FindFirstChild("a")
 		local dragToggle = nil
 		local dragSpeed = 0
 		local dragStart = nil
