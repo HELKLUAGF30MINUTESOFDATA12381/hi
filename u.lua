@@ -48,7 +48,11 @@ function module:createGUI(player)
 			scripteditor = Instance.new("ScrollingFrame")
 			scriptbox = Instance.new("TextBox")
 			otherscripts = Instance.new("Frame")
+			scroll = Instance.new("ScrollingFrame")
+			UIListLayout = Instance.new("UIListLayout")
 			TextLabel = Instance.new("TextLabel")
+			fcbutton = Instance.new("TextButton")
+			shadow_5 = Instance.new("Frame")
 			settings_2 = Instance.new("Frame")
 			TextLabel_2 = Instance.new("TextLabel")
 
@@ -275,6 +279,26 @@ function module:createGUI(player)
 			otherscripts.Size = UDim2.new(1, 0, 0.699999988, 0)
 			otherscripts.Visible = false
 
+			UIListLayout.Name = "UIListLayout"
+			UIListLayout.Padding = UDim.new(0, 10)
+			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+
+
+			scroll.Name = "scroll"
+			scroll.Parent = otherscripts
+			scroll.Active = true
+			scroll.AnchorPoint = Vector2.new(0.5, 0.5)
+			scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			scroll.BackgroundTransparency = 1.000
+			scroll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			scroll.BorderSizePixel = 0
+			scroll.Position = UDim2.new(0.5, 0, 0.5, 0)
+			scroll.Size = UDim2.new(0.8, 0, 0.8, 0)
+			scroll.AutomaticCanvasSize = "Y"
+			scroll.CanvasSize = UDim2.new(0, 0, 0.6, 0)
+			scroll.ScrollBarThickness = 0
+			scroll.ScrollingDirection = Enum.ScrollingDirection.Y
+
 			TextLabel.Parent = otherscripts
 			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			TextLabel.BackgroundTransparency = 1.000
@@ -286,6 +310,26 @@ function module:createGUI(player)
 			TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 			TextLabel.TextSize = 14.000
 			TextLabel.TextWrapped = true
+
+			fcbutton.Name = "forcechat"
+			fcbutton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+			fcbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			fcbutton.BorderSizePixel = 0
+			fcbutton.Size = UDim2.new(0.8, 0, 0.2, 0)
+			fcbutton.FontFace = Enum.Font.SourceSansSemibold
+			fcbutton.Text = "FORCE CHAT"
+			fcbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			fcbutton.TextScaled = true
+			fcbutton.TextSize = 36
+			fcbutton.TextWrapped = true
+
+			shadow_5.Name = "shadow"
+			shadow_5.Parent = clear
+			shadow_5.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+			shadow_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			shadow_5.BorderSizePixel = 0
+			shadow_5.Position = UDim2.new(0.01, 0, 0, 0)
+			shadow_5.Size = UDim2.new(1, 0, 1, 0)
 
 			settings_2.Name = "settings"
 			settings_2.Parent = main
