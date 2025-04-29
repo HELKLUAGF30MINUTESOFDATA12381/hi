@@ -55,6 +55,8 @@ function module:createGUI(player)
 			shadow_5 = Instance.new("Frame")
 			settings_2 = Instance.new("Frame")
 			TextLabel_2 = Instance.new("TextLabel")
+			UICorner_9 = Instance.new("UICorner")
+			UICorner_10 = Instance.new("UICorner")
 
 			exec.Name = "exec"
 			exec.Enabled = true
@@ -325,6 +327,9 @@ function module:createGUI(player)
 			fcbutton.TextSize = 36.000
 			fcbutton.TextWrapped = true
 
+			UICorner_9.CornerRadius = UDim.new(0, 6)
+			UICorner_9.Parent = fcbutton
+
 			shadow_5.Name = "shadow"
 			shadow_5.Parent = fcbutton
 			shadow_5.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -332,6 +337,9 @@ function module:createGUI(player)
 			shadow_5.BorderSizePixel = 0
 			shadow_5.Position = UDim2.new(0.01, 0, 0, 0)
 			shadow_5.Size = UDim2.new(1, 0, 1, 0)
+
+			UICorner_10.CornerRadius = UDim.new(0, 6)
+			UICorner_10.Parent = fcbutton
 
 			settings_2.Name = "settings"
 			settings_2.Parent = main

