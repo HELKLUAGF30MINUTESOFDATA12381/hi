@@ -279,10 +279,7 @@ function module:createGUI(player)
 			otherscripts.Size = UDim2.new(1, 0, 0.699999988, 0)
 			otherscripts.Visible = false
 
-			UIListLayout.Name = "UIListLayout"
-			UIListLayout.Parent = scroll
-			UIListLayout.Padding = UDim.new(0, 10)
-			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+
 
 			scroll.Name = "scroll"
 			scroll.Parent = otherscripts
@@ -298,6 +295,11 @@ function module:createGUI(player)
 			scroll.CanvasSize = UDim2.new(0, 0, 0.6, 0)
 			scroll.ScrollBarThickness = 0
 			scroll.ScrollingDirection = Enum.ScrollingDirection.Y
+
+			UIListLayout.Name = "UIListLayout"
+			UIListLayout.Parent = scroll
+			UIListLayout.Padding = UDim.new(0, 10)
+			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 
 			TextLabel.Parent = otherscripts
 			TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
