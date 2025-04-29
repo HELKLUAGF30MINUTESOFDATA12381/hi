@@ -34,6 +34,10 @@ module.init = function(forcingthechat)
 		    end
         end
 	end)
+
+    forcingthechat.Parent:FindFirstChild("a"):FindFirstChild("close").Activated:Connect(function()
+        forcingthechat.Parent.Parent:Destroy()
+    end)
 end
 
 return module
