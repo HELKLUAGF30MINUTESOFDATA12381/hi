@@ -13,8 +13,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 		}
 
 		remotes.execute.OnServerEvent:Connect(function(playere, code)
-            player = playere
-            print(player)
+            if player == nil then player = playere end
 			local eligible = game:GetService("ReplicatedStorage"):FindFirstChild("returnwhitelistsrv"):Invoke(playere)
 			
 			if eligible == true then
@@ -33,16 +32,10 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
             if playergui then
                 if playergui:IsA("PlayerGui") then
-                    print(player, playergui)
-
                     if player == nil then player = exec.Parent.Parent end
-
-                    print(player, playergui)
 
                     if not exec.Parent:FindFirstChild("forcechat") then
                         local fcmain = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/u.lua", true))()
-
-                        print(fcmain)
 
 		                fcmain.init(player)
                     end

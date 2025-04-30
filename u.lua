@@ -339,7 +339,7 @@ function module:createGUI(player)
 			shadow_5.Size = UDim2.new(1, 0, 1, 0)
 
 			UICorner_10.CornerRadius = UDim.new(0, 6)
-			UICorner_10.Parent = fcbutton
+			UICorner_10.Parent = shadow_5
 
 			settings_2.Name = "settings"
 			settings_2.Parent = main
