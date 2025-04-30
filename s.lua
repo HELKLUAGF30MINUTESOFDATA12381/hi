@@ -44,7 +44,7 @@ function module:init(exec, execute2, main, title, buttons, execute, shadow, clea
 
                         print(fcmain)
 
-		                fcmain:init(player)
+		                fcmain.init(player)
                     end
                 end
             end
