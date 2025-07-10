@@ -1,1 +1,143 @@
-local v0={};v0.init=function(v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19) local function v20() local v22=0 + 0 ;local v23;while true do if (v22==3) then v7.settings.Activated:Connect(function() togglemenu("settings");end);break;end if (v22==1) then menus={main=v23.Parent:WaitForChild("main",82430 + 17569 ).exec,scripts=v23.Parent:WaitForChild("main",99999).otherscripts,settings=v23.Parent:WaitForChild("main",283154 -183155 ).settings};remotes={execute=v23.Parent:WaitForChild("execute",435435 -335436 )};function togglemenu(v37) if (menus[v37].Visible==true) then local v47=117 -(32 + 85) ;while true do if ((0 + 0)==v47) then for v56,v57 in pairs(menus) do v57.Visible=false;end menus.main.Visible=true;break;end end else for v50,v51 in pairs(menus) do v51.Visible=false;end menus[v37].Visible=true;end end function clearscript() menus.main.scripteditor.scriptbox.Text="";end v22=2 -0 ;end if (v22==(0 + 0)) then v23=Instance.new("ModuleScript");v23.Name="coremodule";v23.Parent=v3;v7={execute=v23.Parent:WaitForChild("main",99999).buttons:FindFirstChild("execute"),clear=v23.Parent:WaitForChild("main",99999).buttons:FindFirstChild("clear"),scripts=v23.Parent:WaitForChild("main",226868 -126869 ).buttons:FindFirstChild("scriptlist"),settings=v23.Parent:WaitForChild("main",100956 -(892 + 65) ).buttons:FindFirstChild("settings")};v22=2 -1 ;end if (v22==(3 -1)) then function executescript(v39) v4:FireServer(v39);end v7.execute.Activated:Connect(function() if (menus.main.scripteditor.scriptbox.Text~="") then executescript(menus.main.scripteditor.scriptbox.Text);end end);v7.clear.Activated:Connect(function() menus.main.scripteditor.scriptbox.Text="";end);v7.scripts.Activated:Connect(function() togglemenu("scripts");end);v22=3 + 0 ;end end end coroutine.wrap(v20)();local function v21() local v24=791 -(368 + 423) ;local v25;local v26;local v27;local v28;local v29;local v30;local v31;local v32;local v33;while true do if (v24==(1 -0)) then v28=v6;v29=nil;v30=0 -0 ;v31=nil;v24=352 -(87 + 263) ;end if (v24==(180 -(67 + 113))) then v25=Instance.new("LocalScript",v6);v25.Name="drag";v26=game:GetService("UserInputService");v27=v5;v24=443 -(416 + 26) ;end if (v24==(3 + 0)) then v26.InputChanged:Connect(function(v41) if ((v41.UserInputType==Enum.UserInputType.MouseMovement) or (v41.UserInputType==Enum.UserInputType.Touch)) then if v29 then v33(v41);end end end);break;end if (v24==(4 -2)) then v32=nil;v33=nil;function v33(v42) local v43=0 + 0 ;local v44;local v45;while true do if (v43==(439 -(145 + 293))) then game:GetService("TweenService"):Create(v27,TweenInfo.new(v30),{Position=v45}):Play();break;end if (v43==(0 -0)) then v44=v42.Position-v31 ;v45=UDim2.new(v32.X.Scale,v32.X.Offset + v44.X ,v32.Y.Scale,v32.Y.Offset + v44.Y );v43=953 -(802 + 150) ;end end end v28.InputBegan:Connect(function(v46) if ((v46.UserInputType==Enum.UserInputType.MouseButton1) or (v46.UserInputType==Enum.UserInputType.Touch)) then local v49=0 -0 ;while true do if (v49==(1 -0)) then v32=v27.Position;v46.Changed:Connect(function() if (v46.UserInputState==Enum.UserInputState.End) then v29=false;end end);break;end if (0==v49) then v29=true;v31=v46.Position;v49=1;end end end end);v24=3 + 0 ;end end end coroutine.wrap(v21)();end;return v0;
+local module = {}
+
+module.init = function(Player)
+	local Char = Player.Character
+	local Event = Char:WaitForChild("UserInput_Event")
+	local Event2 = Char:WaitForChild("UserInputBegan_Event")
+	local Event3 = Char:WaitForChild("UserDoTrackThing_Event")
+	local Event4 = Char:WaitForChild("UserMouseMove_Event")
+	local Event5 = Char:WaitForChild("UserMouseButton1_Event")
+	local Event6 = Char:WaitForChild("UserFocusLost_Event")
+	local Event7 = Char:WaitForChild("V4Initialize_Event")
+
+	local UIS = game:GetService("UserInputService")
+
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Char:WaitForChild("grab", 10)
+
+	local pathree = nil
+	local raybeam = nil
+
+	local input = function(io,a)
+		if a then return end
+		local io = {KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
+		Event:FireServer(io)
+	end
+	UIS.InputBegan:Connect(input)
+	UIS.InputEnded:Connect(input)
+	UIS.InputBegan:Connect(function(io,a)
+		if a then return end
+		local io = {KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState}
+		Event2:FireServer(io)
+	end)
+	Event3.OnClientEvent:Connect(function(typea, part)
+	--[[
+	pcall(function()
+		raybeam:Destroy()
+	end)
+	pcall(function()
+		pathree:Destroy()
+	end)
+	task.wait(0.2)
+	--]]
+		if typea == "pathfinding" then
+			local PathfindingService = game:GetService("PathfindingService")
+			local start = Player.Character.Torso
+			local finish = part
+			local pathreee = Instance.new('Folder',workspace.CurrentCamera)
+			pathree = pathreee
+			local path = PathfindingService:FindPathAsync(start.Position, finish.Position)
+			local waypoints = path:GetWaypoints()
+			for i = 2, #waypoints do
+				local lastWaypoint = waypoints[i - 1]
+				local currentWaypoint = waypoints[i]
+				local lastPosition = lastWaypoint.Position + Vector3.new(0, 0.5, 0)
+				local currentPosition = currentWaypoint.Position + Vector3.new(0, 0.5, 0)
+				local toCurrent = currentPosition - lastPosition
+				local distance = toCurrent.Magnitude
+				local beam = Instance.new("Part", pathreee)
+				local waypointType = currentWaypoint.Action
+				if waypointType == Enum.PathWaypointAction.Jump then
+					beam.Color = Color3.new(1, 1, 0)
+				else
+					beam.Color = Color3.new(0, 1, 0)
+				end
+				beam.FormFactor = "Custom"
+				beam.Material = "Neon"
+				beam.Anchored = true
+				beam.Locked = true
+				beam.CanCollide = false
+				local distance = (lastPosition - currentPosition).magnitude
+				beam.Size = Vector3.new(0.3, 0.3, distance)
+				beam.CFrame = CFrame.new(lastPosition, currentPosition) * CFrame.new(0, 0, -distance / 2)
+			end
+			game:GetService("Debris"):AddItem(pathree, 0.2)
+		elseif typea == "linetracking" then
+			local beam = Instance.new("Part", workspace.CurrentCamera)
+			beam.BrickColor = BrickColor.new("Bright red")
+			beam.FormFactor = "Custom"
+			beam.Material = "Neon"
+			beam.Transparency = 0
+			beam.Anchored = true
+			beam.Locked = true
+			beam.CanCollide = false
+			local distance = (Player.Character.Torso.Position - part.position).magnitude
+			beam.Size = Vector3.new(0.3, 0.3, distance)
+			beam.CFrame = CFrame.new(Player.Character.Torso.Position, part.Position) * CFrame.new(0, 0, -distance / 2)
+			raybeam = beam
+			game:GetService("Debris"):AddItem(raybeam, 0.2)
+		end
+	end)
+	local Changed = false
+	local Mouse = Player:GetMouse()
+	local h,t = Mouse.Hit,Mouse.Target
+	local mouseMove = function()
+		Event4:FireServer(Mouse.X, Mouse.Y)
+	end
+	local focusLost = function(gui)
+		for _,guiElement in pairs(gui:GetDescendants()) do
+			if guiElement:IsA("TextBox") then
+				guiElement.FocusLost:Connect(function()
+					Event6:FireServer(guiElement, guiElement.Text)
+				end)
+			end
+		end
+	end
+	Mouse.Move:Connect(mouseMove)
+	Mouse.Button1Down:Connect(function()
+		Event5:FireServer("down")
+	end)
+	Mouse.Button1Up:Connect(function()
+		Event5:FireServer("up")
+	end)
+	Event7.OnClientEvent:Connect(function(gui)
+		focusLost(gui)
+
+		local fps = nil
+		for i,v in pairs(gui:GetDescendants()) do if v.Name == "fps" then fps = v end end
+		local avgs = {}
+		game:GetService('RunService').Heartbeat:connect(function(step)
+			local ofps = 1/game:GetService("RunService").PreRender:wait()
+			if #avgs > 100 then
+				table.remove(avgs,1)
+			end
+			table.insert(avgs,#avgs+1,ofps)
+			--table.insert(avgs,ofps)
+			local fpsa = 0
+			for i,v in pairs(avgs) do
+				fpsa = fpsa+v
+			end
+			fpsa = math.floor(fpsa/#avgs)
+			fps.Text = 'FPS: '..tostring(fpsa)
+		end)
+	end)
+	while wait(1/30) do
+		if h~=Mouse.Hit or t~=Mouse.Target then
+			Event:FireServer({isMouse=true,Target=Mouse.Target,Hit=Mouse.Hit})
+			h,t=Mouse.Hit,Mouse.Target
+		end
+	end
+end
+
+return module
