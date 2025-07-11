@@ -11,7 +11,6 @@ https://www.roblox.com/library/1255455698/drone
 https://www.roblox.com/library/1255292752/heart
 ]]--
 
-local umthing = script:FindFirstChild("um")
 local Mouse,mouse,UserInputService,ContextActionService
 
 local Event2 = Instance.new("RemoteEvent")

